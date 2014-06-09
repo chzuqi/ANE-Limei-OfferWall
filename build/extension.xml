@@ -1,0 +1,32 @@
+<extension xmlns="http://ns.adobe.com/air/extension/4.0">
+  <id>com.limei.extension</id>
+  <versionNumber>1</versionNumber>
+  <platforms>
+    <platform name="iPhone-ARM">
+        <applicationDeployment>
+            <nativeLibrary>libLimeiOfferWall.a</nativeLibrary>
+            <initializer>LimeiOfferWallExtInitializer</initializer>
+            <finalizer>LimeiOfferWallExtFinalizer</finalizer>
+        </applicationDeployment>
+    </platform>
+    <platform name="iPhone-x86">
+        <applicationDeployment>
+            <nativeLibrary>libLimeiOfferWall.a</nativeLibrary>
+            <initializer>LimeiOfferWallExtInitializer</initializer>
+            <finalizer>LimeiOfferWallExtFinalizer</finalizer>
+        </applicationDeployment>
+    </platform>
+
+    <!--<platform name="Android-ARM">
+        <applicationDeployment> 
+            <nativeLibrary>libDomodOfferWall.jar</nativeLibrary>
+            <initializer>cn.domob.ane.DomobExtension</initializer>
+            <finalizer>cn.domob.ane.DomobExtension</finalizer>
+        </applicationDeployment> 
+    </platform>-->
+    
+    <platform name="default"> 
+        <applicationDeployment/> 
+    </platform> 
+  </platforms>
+</extension>

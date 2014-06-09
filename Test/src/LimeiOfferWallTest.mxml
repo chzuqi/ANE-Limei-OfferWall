@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" applicationDPI="160" creationComplete="application1_creationCompleteHandler(event)">
+	<fx:Style source="LimeiOfferWallTest.css"/>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.limei.ane.LimeiOfferWallExtension;
+			
+			import mx.events.FlexEvent;
+			
+			protected function application1_creationCompleteHandler(event:FlexEvent):void
+			{
+				// TODO Auto-generated method stub
+				LimeiOfferWallExtension.getInstance().addEventListener(StatusEvent.STATUS, onStatus);
+			}
+			
+			private function onStatus(e:StatusEvent):void
+			{
+				txtarea.appendText("[" + e.code + "]: {" + e.level + "}\n"); 
+			}
+			
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				LimeiOfferWallExtension.BannerInit(BannerID.text);
+			}
+			
+			protected function button2_clickHandler(event:MouseEvent):void
+			{
+				LimeiOfferWallExtension.AdWallInit(WallID.text);
+			}
+			
+			protected function button3_clickHandler(event:MouseEvent):void
+			{
+				LimeiOfferWallExtension.InterstitialsInit(InterstitialsID.text);
+			}
+			
+			protected function button4_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				LimeiOfferWallExtension.FullScreenInit(FullScreenID.text);
+			}
+			
+			protected function button5_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				LimeiOfferWallExtension.ReduceScore(WallID.text, int(Score.text));
+			}
+			
+			protected function button6_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				LimeiOfferWallExtension.QueryScore(WallID.text);
+			}
+			
+			protected function button7_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				LimeiOfferWallExtension.ShowAdWall();
+			}
+			
+			protected function button8_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				LimeiOfferWallExtension.ShowBanner();
+			}
+			
+			protected function button9_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				LimeiOfferWallExtension.HideBanner();
+			}
+			
+			protected function button10_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				LimeiOfferWallExtension.ShowFullScreen();
+			}
+			
+			protected function button11_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				LimeiOfferWallExtension.ShowInterstitials();
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:Button x="10" y="10" width="130" height="30" label="BannerInit"
+			  click="button1_clickHandler(event)"/>
+	<s:TextInput id="BannerID" x="148" y="10" width="162" prompt="BannerID"/>
+	<s:Button x="10" y="53" width="130" height="30" label="AdWallInit" click="button2_clickHandler(event)"/>
+	<s:TextInput id="WallID" x="148" y="53" width="162" prompt="WallID"
+				 text="2d1c4ebc30d85e42647cf29b5d5516bd"/>
+	<s:Button x="10" y="91" width="130" height="30" label="InterstitialsInit" click="button3_clickHandler(event)"/>
+	<s:Button x="10" y="129" width="130" height="30" label="FullScreenInit" click="button4_clickHandler(event)"/>
+	<s:TextInput id="FullScreenID" x="148" y="129" width="162" prompt="FullScreenID"/>
+	<s:Button x="10" y="171" width="130" height="30" label="ReduceScore" click="button5_clickHandler(event)"/>
+	<s:TextInput id="Score" x="148" y="171" width="162" prompt="Score" text="1"/>
+	<s:TextInput id="InterstitialsID" x="148" y="91" width="162" prompt="InterstitialsID"
+				 text="e437ddf94ac5192bfbcb56f7f798c3bd"/>
+	<s:Button x="10" y="209" width="130" height="29" label="QueryScore" click="button6_clickHandler(event)"/>
+	<s:Button x="148" y="212" width="162" height="26" label="ShowAdWall" click="button7_clickHandler(event)"/>
+	<s:Button x="10" y="246" width="130" height="27" label="ShowBanner" click="button8_clickHandler(event)"/>
+	<s:Button x="148" y="246" width="162" height="27" label="HideBanner" click="button9_clickHandler(event)"/>
+	<s:Button x="10" y="281" width="130" height="27" label="ShowFullScreen" click="button10_clickHandler(event)"/>
+	<s:Button x="148" y="281" width="162" height="27" label="ShowInterstitials" click="button11_clickHandler(event)"/>
+	<s:TextArea id="txtarea" x="13" y="319" width="300" height="131"/>
+</s:Application>
