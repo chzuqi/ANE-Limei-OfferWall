@@ -155,7 +155,7 @@
         return NULL;
     }
     //直接拿keywindow,哼嗬哈嘿
-    adView_FullScreen=[[immobView alloc] initWithAdUnitId:@"d7974a541f98f4baa49c6fdbe94cd278" adUnitType:fullScreen rootViewController:[[UIApplication sharedApplication] keyWindow].rootViewController userInfo:nil];
+    adView_FullScreen=[[immobView alloc] initWithAdUnitId:AdUnitId adUnitType:fullScreen rootViewController:[[UIApplication sharedApplication] keyWindow].rootViewController userInfo:nil];
     adView_FullScreen.delegate=self;
     NSLog(@"init FullScreen with AdUnitId: %@", AdUnitId);
     return NULL;
